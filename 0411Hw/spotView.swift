@@ -12,6 +12,8 @@ struct SpotRowView: View {
     let spot: Spot
     @State private var expanded = false
     @State private var selectedImageIndex = 0
+    @Environment(\.horizontalSizeClass) private var hSizeClass
+
 
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
@@ -20,14 +22,13 @@ struct SpotRowView: View {
                     Image(imageName)
                         .resizable()
                         .scaledToFill()
-                        .frame(height: 200)
                         .clipped()
                         .cornerRadius(12)
                         .tag(index)
                 }
             }
             .tabViewStyle(PageTabViewStyle())
-            .frame(height: 200)
+            .frame(height: hSizeClass == .regular ? 400 : 300)
 
             HStack {
                 Text(spot.name)

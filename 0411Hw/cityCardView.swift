@@ -1,14 +1,18 @@
 
 import SwiftUI
 
+
 struct CityCardView: View {
     let city: City
+    
+    @Environment(\.horizontalSizeClass) private var hSizeClass
+
     var body: some View {
         ZStack(alignment: .bottomLeading) {
             Image(city.imageName)
                 .resizable()
                 .scaledToFill()
-                .frame(height: 200)
+                .frame(height: hSizeClass == .regular ? 400 : 300)
                 .clipped()
                 .cornerRadius(10)
             

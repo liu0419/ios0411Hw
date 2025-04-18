@@ -10,6 +10,7 @@ import SwiftUI
 
 struct HotelRowView: View {
     let hotel: Hotel
+    @Environment(\.horizontalSizeClass) private var hSizeClass
 
     var body: some View {
         VStack(alignment: .leading, spacing: 15) {
@@ -17,7 +18,7 @@ struct HotelRowView: View {
             Image(hotel.imgs[0])
                 .resizable()
                 .scaledToFill()
-                .frame(height: 200)
+                .frame(height: hSizeClass == .regular ? 400 : 300)
                 .clipped()
                 .cornerRadius(12)
             // 飯店名稱
