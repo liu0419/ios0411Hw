@@ -18,7 +18,8 @@ struct HotelRowView: View {
             Image(hotel.imgs[0])
                 .resizable()
                 .scaledToFill()
-                .frame(height: hSizeClass == .regular ? 400 : 300)
+                .frame(height: hSizeClass == .regular ? 400 : 200)
+                .frame(maxWidth: .infinity)
                 .clipped()
                 .cornerRadius(12)
             // 飯店名稱
@@ -65,6 +66,7 @@ struct CityHotelsView: View {
                     }
                 }
                 .padding(.vertical)
+                .frame(maxWidth: .infinity)
             }
             .navigationTitle("\(city.name) 飯店")
         }

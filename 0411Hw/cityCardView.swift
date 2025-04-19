@@ -12,7 +12,8 @@ struct CityCardView: View {
             Image(city.imageName)
                 .resizable()
                 .scaledToFill()
-                .frame(height: hSizeClass == .regular ? 400 : 300)
+                .frame(height: hSizeClass == .regular ? 400 : 200)
+                .frame(maxWidth: .infinity)
                 .clipped()
                 .cornerRadius(10)
             

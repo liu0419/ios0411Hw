@@ -28,7 +28,8 @@ struct SpotRowView: View {
                 }
             }
             .tabViewStyle(PageTabViewStyle())
-            .frame(height: hSizeClass == .regular ? 400 : 300)
+            .frame(height: hSizeClass == .regular ? 400 : 200)
+            .frame(maxWidth: .infinity)
 
             HStack {
                 Text(spot.name)
@@ -69,6 +70,7 @@ struct CitySpotsView: View {
                     }
                 }
                 .padding(.vertical)
+                .frame(maxWidth: .infinity)
             }
             .navigationTitle("\(city.name) 景點")
         }
